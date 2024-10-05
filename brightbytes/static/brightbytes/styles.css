@@ -2843,3 +2843,47 @@ main {
   border: 0;
 }
 
+.lessons-h1 {
+  line-height: 1;
+}
+
+.lessons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 15px;
+  margin-top: 40px;
+}
+
+.lessons-container .lesson {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+}
+
+.lessons-container .lesson > div:first-child {
+  display: flex;
+  gap: 10px;
+}
+
+.lessons-container .lesson > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.lessons-container .number {
+  font-size: 55px;
+  font-weight: 800;
+}
+
+.lessons-container .title {
+  font-size: 20px;
+}
+
+.lessons-container .lesson > div:last-child {
+  /* flex */
+}

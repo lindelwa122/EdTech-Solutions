@@ -81,5 +81,6 @@ def register(request):
     else:
         return render(request, 'brightbytes/register.html')
 
+@login_required(login_url="/login")
 def lessons(request):
     return render(request, "brightbytes/lessons.html")
