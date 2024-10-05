@@ -30,8 +30,26 @@
 
 <body>
 
-  {% block body %}
-  {% endblock %}
+  <header>
+    <div class="nav-icon-wrapper">
+      <i class="nav-icon bi bi-list"></i>
+    </div>
+
+    <div>
+      <div class="nav-icon-wrapper points-wrapper">
+        <i class="nav-icon bi bi-star-fill"></i>
+        <span>2452</span>
+      </div>
+      <div class="profile"></div>
+    </div>
+  </header>
+
+  <main>
+    {% block body %}
+    {% endblock %}
+  </main>
+
+  <footer></footer>
   
 </body>
 

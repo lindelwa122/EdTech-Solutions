@@ -6,6 +6,57 @@
 
 {% block body %}
 
-<h1>You are logged in buddy</h1>
+<div class='progress-card'>
+    <h1>Your progress</h1>
+
+    <p>You completed 67 lessons out of 107</p>
+    <div class='progress'>
+        <div class='progress-bar' role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100'></div>
+    </div>
+
+    <div class='button-wrapper'>
+        <a type='button' class='btn btn-secondary w-25' href='#'>Continue</a>
+    </div>
+</div>
+
+<h1 class="leaderboard-title">Leaderboard</h1>
+
+<div class="leaderboard">
+    <div class="user">
+        <div class="name">1. Sphiwe</div>
+        <div class="nav-icon-wrapper points-wrapper">
+            <i class="nav-icon bi bi-star-fill"></i>
+            <span>2452</span>
+        </div>
+    </div>
+    <div class="user">
+        <div class="name">2. Sphiwe</div>
+        <div class="nav-icon-wrapper points-wrapper">
+            <i class="nav-icon bi bi-star-fill"></i>
+            <span>2452</span>
+        </div>
+    </div>
+    <div class="user">
+        <div class="name">3. Sphiwe</div>
+        <div class="nav-icon-wrapper points-wrapper">
+            <i class="nav-icon bi bi-star-fill"></i>
+            <span>2452</span>
+        </div>
+    </div>
+    <div class="user">
+        <div class="name">4. Sphiwe</div>
+        <div class="nav-icon-wrapper points-wrapper">
+            <i class="nav-icon bi bi-star-fill"></i>
+            <span>2452</span>
+        </div>
+    </div>
+    <div class="user">
+        <div class="name">5. Sphiwe</div>
+        <div class="nav-icon-wrapper points-wrapper">
+            <i class="nav-icon bi bi-star-fill"></i>
+            <span>2452</span>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
