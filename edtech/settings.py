@@ -25,12 +25,15 @@ SECRET_KEY = 'django-insecure-lkhs0r!b%g@ft@v)2+i0r+mfd1^2f8_6+-(4@q(i$6=(%0slr2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+# APPEND_SLASH=False
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'brightbytes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'edtech.wsgi.application'
+
+AUTH_USER_MODEL = 'brightbytes.User'
 
 
 # Database
@@ -121,3 +126,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Csrf settings
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
