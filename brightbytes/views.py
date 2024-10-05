@@ -80,3 +80,6 @@ def register(request):
 
     else:
         return render(request, 'brightbytes/register.html')
+
+def lessons(request):
+    return render(request, "brightbytes/lessons.html")
