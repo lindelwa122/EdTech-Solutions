@@ -1,0 +1,47 @@
+{% extends 'brightbytes/layout.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+
+<section class='form-section align-items-center d-flex flex-column justify-content-center'>
+
+  <div class='forms-wrapper w-100'>
+    <div class='align-items-center d-flex flex-column form'>
+      <form class='w-100'>
+        {% csrf_token %}
+  
+        <div class='form-floating mb-3'>
+          <input type='text' class='username form-control input-frame' placeholder='Username' name='Username' required/>
+          <label for='username' class='floating-input-placeholder'>Username</label>
+        </div>
+  
+        <div class='form-floating mb-3'>
+          <input type='password' class='password form-control input-frame' placeholder='Password' name='Passsword' required/>
+          <label for='password' class='floating-input-placeholder'>Password</label>
+        </div>
+  
+        <div class='mb-3 text-center error-message'></div>
+  
+        <div class='mb-3'>
+          <input type='submit' value='Login' class='btn btn-primary w-100 attractive'>
+          <button class='btn btn-primary w-100 d-none' disabled>
+            <span class='spinner'></span>
+          </button>
+        </div>
+      </form>
+  
+      <hr class='w-100' />
+  
+      <a type='button' class='btn btn-secondary w-50' href='{% url "brightbytes:register" %}'>Register</a>
+    </div>
+  </div>
+
+
+</section>
+
+<script src='{% static "brightbytes/js/login.js" %}'></script>
+
+{% endblock %}
