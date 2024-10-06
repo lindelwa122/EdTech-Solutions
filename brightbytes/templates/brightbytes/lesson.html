@@ -1,0 +1,18 @@
+{% extends "brightbytes/layout.html" %}
+
+{% block body %}
+
+<div class="lesson-container">          
+    <!-- <h1>{{ lesson.title }}</h1> -->
+
+    <div class="content">
+        {{ lesson.content|safe }}
+    </div>
+
+    <div class='button-wrapper'>
+        <a type='button' class='btn btn-secondary w-50' href='{% url "brightbytes:quiz" quiz_id %}'>Take a quiz</a>
+    </div>
+
+</div>
+
+{% endblock %}

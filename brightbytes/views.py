@@ -13,7 +13,11 @@ from .utils import *
 # Create your views here.
 @login_required(login_url='/login')
 def index(request):
-    return render(request, 'brightbytes/index.html')
+    users = User.objects.all().order_by('-points')
+    return render(request, 'brightbytes/index.html', {
+        "user": request.user,
+        "users": users,
+    })
 
 def login_view(request):
     if request.method == 'POST':
@@ -82,5 +86,33 @@ def register(request):
         return render(request, 'brightbytes/register.html')
 
 @login_required(login_url="/login")
-def lessons(request):
-    return render(request, "brightbytes/lessons.html")
+def lessons(request, course_id):
+    course = Course.objects.get(id=int(course_id))
+    lessons = Lesson.objects.filter(course=course)
+    return render(request, "brightbytes/lessons.html", {
+        "lessons": lessons,
+        "user": request.user,
+    })
+
+@login_required(login_url="/login")
+def lesson(request, lesson_id):
+    lesson_obj = Lesson.objects.get(id=int(lesson_id))
+    quiz = Quiz.objects.get(lesson=lesson_obj)
+    return render(request, "brightbytes/lesson.html", {
+        "lesson": lesson_obj,
+        "quiz_id": quiz.id,
+        "request": request.user,
+    })
+
+@login_required(login_url="/login")
+def quiz(request, quiz_id):
+    quiz = Quiz.objects.get(id=int(quiz_id))
+    choices = quiz.get_options()
+    return render(request, "brightbytes/quiz.html", {
+        "quiz": quiz,
+        "choices": choices,
+        "user": request.user,
+    })
+
+
+

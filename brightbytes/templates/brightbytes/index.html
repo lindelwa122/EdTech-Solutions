@@ -15,48 +15,22 @@
     </div>
 
     <div class='button-wrapper'>
-        <a type='button' class='btn btn-secondary w-25' href='#'>Continue</a>
+        <a type='button' class='btn btn-secondary w-25' href='{% url "brightbytes:lessons" "36" %}'>Continue</a>
     </div>
 </div>
 
 <h1 class="leaderboard-title">Leaderboard</h1>
 
 <div class="leaderboard">
+    {% for user in users %}
     <div class="user">
-        <div class="name">1. Sphiwe</div>
+        <div class="name">{{ forloop.counter }}. {{ user.username }}</div>
         <div class="nav-icon-wrapper points-wrapper">
             <i class="nav-icon bi bi-star-fill"></i>
-            <span>2452</span>
+            <span>{{ user.points }}</span>
         </div>
     </div>
-    <div class="user">
-        <div class="name">2. Sphiwe</div>
-        <div class="nav-icon-wrapper points-wrapper">
-            <i class="nav-icon bi bi-star-fill"></i>
-            <span>2452</span>
-        </div>
-    </div>
-    <div class="user">
-        <div class="name">3. Sphiwe</div>
-        <div class="nav-icon-wrapper points-wrapper">
-            <i class="nav-icon bi bi-star-fill"></i>
-            <span>2452</span>
-        </div>
-    </div>
-    <div class="user">
-        <div class="name">4. Sphiwe</div>
-        <div class="nav-icon-wrapper points-wrapper">
-            <i class="nav-icon bi bi-star-fill"></i>
-            <span>2452</span>
-        </div>
-    </div>
-    <div class="user">
-        <div class="name">5. Sphiwe</div>
-        <div class="nav-icon-wrapper points-wrapper">
-            <i class="nav-icon bi bi-star-fill"></i>
-            <span>2452</span>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

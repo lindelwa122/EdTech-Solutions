@@ -2887,3 +2887,21 @@ main {
 .lessons-container .lesson > div:last-child {
   /* flex */
 }
+
+.lesson-container .button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.quiz-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.next-button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+}

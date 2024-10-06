@@ -1,0 +1,49 @@
+{% extends "brightbytes/layout.html" %}
+
+{% block title %} Quiz {% endblock %}
+
+{% block body %}
+
+<h1>{{ quiz.question }}</h1>
+
+<div class='quiz-choices'>
+    {% for choice in choices %}
+        <div class="choice">
+            <span class='number'>{{ forloop.counter }}. </span>
+            <button type='button' class='btn btn-secondary w-100 choice-btn' data-value="{{ forloop.counter0 }}">{{ choice }}</button>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="quiz-result"></div>
+
+<div class="answer" data-answer="{{ quiz.answer }}"></div>
+
+<script>
+    let answerDiv = document.querySelector('.answer');
+    let answer = answerDiv.dataset.answer;
+    let output = document.querySelector('.quiz-result');
+
+    let choices = document.querySelectorAll('.choice-btn');
+    choices.forEach(choice => {
+        choice.addEventListener('click', () => {
+            value = choice.dataset.value;
+            if (value === answer) {
+                output.textContent = "You are correct!"
+                output.style.color = 'green'
+                output.style.fontSize = '25px'
+            } else {
+                output.textContent = "You are incorrect!"
+                output.style.color = 'red'
+                output.style.fontSize = '25px'
+
+            }
+        })
+    })
+</script>
+
+<div class="next-button">
+    <a type='button' class='btn btn-secondary w-50' href='{% url "brightbytes:index" %}'>Go to the home page</a>
+</div>
+
+{% endblock %}
